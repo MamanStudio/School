@@ -89,4 +89,29 @@ public class Arrays {
             System.out.println(arr[i]);
         }
     }
+
+    public static int eq8(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            int beforeSum = 0;
+            int afterSum = 0;
+            for (int j = 0; j <= i; j++) {
+                beforeSum += arr[j];
+            }
+            for (int z = i;  z < arr.length; z++) {
+                afterSum += arr[z];
+            }
+            if (beforeSum == afterSum) return i;
+        }
+        return -1;
+    }
+
+    public static int eq9(String[] arr, char c) {
+        int sum = 0;
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr.length; j++) {
+                if (arr[i].charAt(j) == c) sum++;
+            }
+        }
+        return sum;
+    }
 }
